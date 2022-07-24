@@ -5,7 +5,7 @@ import { Container } from './styles';
 function Content() {
   return (
     <Container>
-      <div>Content</div>
+      <h1>Content</h1>
     </Container>
   );
 }

@@ -5,7 +5,7 @@ import { Container } from './styles';
 function Aside() {
   return (
     <Container>
-      <div>Aside</div>
+      <h1>Aside</h1>
     </Container>
   );
 }
