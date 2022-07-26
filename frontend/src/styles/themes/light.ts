@@ -12,6 +12,6 @@ export default {
 
     sucess: '#03bb85',
     info: '#3b5998',
-    warining: '#ff691',
+    warning: '#ff691',
   },
 };
