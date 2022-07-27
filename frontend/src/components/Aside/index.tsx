@@ -1,11 +1,20 @@
 import React from 'react';
 
-import { Container } from './styles';
+import logoImg from '../../assets/logo.svg';
+
+import { Container, LogImg, Title, Header, MenuContainer, MenuItemLink } from './styles';
 
 function Aside() {
   return (
     <Container>
-      <h1>Aside</h1>
+      <Header>
+        <LogImg src={logoImg} alt="My Wallet Logo" />
+        <Title>Minha Carteira</Title>
+      </Header>
+
+      <MenuContainer>
+        <MenuItemLink href="#">DashBoard</MenuItemLink>
+      </MenuContainer>
     </Container>
   );
 }
