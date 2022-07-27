@@ -1,4 +1,5 @@
 import React from 'react';
+import { MdDashboard, MdArrowDownward, MdArrowUpward, MdExitToApp } from 'react-icons/md';
 
 import logoImg from '../../assets/logo.svg';
 
@@ -13,10 +14,22 @@ function Aside() {
       </Header>
 
       <MenuContainer>
-        <MenuItemLink href="#">DashBoard</MenuItemLink>
-        <MenuItemLink href="#">Entradas</MenuItemLink>
-        <MenuItemLink href="#">Saidas</MenuItemLink>
-        <MenuItemLink href="#">Sair</MenuItemLink>
+        <MenuItemLink href="#">
+          <MdDashboard />
+          DashBoard
+        </MenuItemLink>
+        <MenuItemLink href="#">
+          <MdArrowDownward />
+          Entradas
+        </MenuItemLink>
+        <MenuItemLink href="#">
+          <MdArrowUpward />
+          Saidas
+        </MenuItemLink>
+        <MenuItemLink href="#">
+          <MdExitToApp />
+          Sair
+        </MenuItemLink>
       </MenuContainer>
     </Container>
   );

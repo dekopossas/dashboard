@@ -37,10 +37,17 @@ export const MenuItemLink = styled.a`
   text-decoration: none;
 
   margin: 7px 0;
+  display: flex;
+  align-items: center;
 
   transition: opacity 0.3;
 
   &:hover {
     opacity: 0.7;
+  }
+
+  > svg {
+    font-size: 18px;
+    margin-right: 5px;
   }
 `;
