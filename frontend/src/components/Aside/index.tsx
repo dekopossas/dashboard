@@ -14,6 +14,9 @@ function Aside() {
 
       <MenuContainer>
         <MenuItemLink href="#">DashBoard</MenuItemLink>
+        <MenuItemLink href="#">Entradas</MenuItemLink>
+        <MenuItemLink href="#">Saidas</MenuItemLink>
+        <MenuItemLink href="#">Sair</MenuItemLink>
       </MenuContainer>
     </Container>
   );
