@@ -5,12 +5,12 @@ import Content from '../Content';
 
 import { Grid } from './styles';
 
-function Layout() {
+function Layout({ children }: any) {
   return (
     <Grid>
       <MainHeader />
       <Aside />
-      <Content />
+      <Content>{children}</Content>
     </Grid>
   );
 }

@@ -1,9 +1,15 @@
-import React from 'react'
+import React from 'react';
+import { Container, Title, Controllers } from './styles';
 
 function ContentHeader() {
   return (
-    <div>ContentHeader</div>
-  )
+    <Container>
+      <Title>
+        <h1>Título</h1>
+      </Title>
+      <Controllers></Controllers>
+    </Container>
+  );
 }
 
-export default ContentHeader
+export default ContentHeader;

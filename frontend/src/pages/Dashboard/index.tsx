@@ -1,8 +1,13 @@
 import React from 'react'
+import ContentHeader from '../../components/ContentHeader';
+
+import { Container } from './styles';
 
 function Dashboard() {
   return (
-    <div>Dashboard</div>
+    <Container>
+      <ContentHeader />
+    </Container>
   )
 }
 
