@@ -11,6 +11,8 @@ function ContentHeader() {
       </TitleContainer>
       <Controllers>
         <Selectinput />
+        <Selectinput />
+        <Selectinput />
       </Controllers>
     </Container>
   );
