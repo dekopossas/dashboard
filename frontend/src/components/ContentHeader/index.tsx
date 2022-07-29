@@ -3,16 +3,26 @@ import Selectinput from '../../components/Selectinput';
 
 import { Container, TitleContainer, Controllers } from './styles';
 
-function ContentHeader() {
+interface IContentHeaderProps {
+  title: string;
+  lineColor: string;
+  controllers: React.ReactNode;
+}
+
+function ContentHeader({ title, lineColor, controllers }: IContentHeaderProps) {
+  const options = [
+    { value: 'diana', label: 'Diana' },
+    { value: 'lais', label: 'Laís' },
+    { value: 'miriam', label: 'Míriam' },
+  ];
+
   return (
     <Container>
       <TitleContainer>
-        <h1>Título</h1>
+        <h1>{title}</h1>
       </TitleContainer>
       <Controllers>
-        <Selectinput />
-        <Selectinput />
-        <Selectinput />
+        {controllers}
       </Controllers>
     </Container>
   );

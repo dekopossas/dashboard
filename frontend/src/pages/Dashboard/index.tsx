@@ -6,7 +6,9 @@ import { Container } from './styles';
 function Dashboard() {
   return (
     <Container>
-      <ContentHeader />
+      <ContentHeader>
+        
+      </ContentHeader>
     </Container>
   )
 }

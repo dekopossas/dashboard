@@ -8,16 +8,19 @@ interface ISelectInputProps {
   }[],
 }
 
-function Selectinput() {
+function SelectInput({ options }: ISelectInputProps) {
   return (
     <Contaienr>
       <select>
-        <option value="a">Laís</option>
-        <option value="b">Diana</option>
-        <option value="c">Miriam</option>
+        {
+          options.map((option) => (
+
+            <option value={option.value} key={option.value}>{option.label}</option>
+          ))
+        }
       </select>
     </Contaienr>
   )
 }
 
-export default Selectinput
+export default SelectInput
