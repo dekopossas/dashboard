@@ -13,7 +13,7 @@ function Dashboard() {
 
   return (
     <Container>
-      <ContentHeader title="DashBoard" lineColor={"#fff"}>
+      <ContentHeader title="DashBoard" lineColor="#F7931B">
         <SelectInput options={options} />
       </ContentHeader>
     </Container>

@@ -11,7 +11,7 @@ interface IContentHeaderProps {
 function ContentHeader({ title, lineColor, children }: IContentHeaderProps) {
   return (
     <Container>
-      <TitleContainer>
+      <TitleContainer lineColor={lineColor}>
         <h1>{title}</h1>
       </TitleContainer>
       <Controllers>

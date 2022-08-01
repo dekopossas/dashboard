@@ -5,13 +5,14 @@ import Layout from './components/Layout';
 import GlobalStyles from './styles/GlobalStyles';
 import dark from './styles/themes/dark';
 import Dashboard from './pages/Dashboard';
+import List from './pages/List';
 
 function App() {
   return (
     <ThemeProvider theme={dark}>
       <GlobalStyles />
       <Layout>
-        <Dashboard />
+        <List />
       </Layout>
     </ThemeProvider>
   );
