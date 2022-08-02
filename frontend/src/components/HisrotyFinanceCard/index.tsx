@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Container } from './styles';
+import { Container, Tag } from './styles';
 
 interface IHisrotyFinanceCardProps {
   cardColor: string;
@@ -19,7 +19,13 @@ function HisrotyFinanceCard({
 }: IHisrotyFinanceCardProps) {
   return (
     <Container color={cardColor}>
-      HisrotyFinanceCard
+      <Tag color = {tagColor}>
+        <div>
+          <span>{title}</span>
+          <small>{subtitle}</small>
+        </div>
+        <h3>{amount}</h3>
+      </Tag>
     </Container>
   )
 }
