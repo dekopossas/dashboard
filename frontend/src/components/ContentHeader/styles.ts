@@ -10,7 +10,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
 
-  margin-bottom: 120px;
+  margin-bottom: 12px;
 `;
 
 export const TitleContainer = styled.div<ITitleContainerProps>`
