@@ -27,6 +27,83 @@ function List() {
           title="Conta de luz"
           tagColor="#e44c4e"
         />
+        <HisrotyFinanceCard
+          amount="R$ 130,00"
+          cardColor="#313862"
+          subtitle="02/08/2022"
+          title="Conta de luz"
+          tagColor="#e44c4e"
+        />
+        <HisrotyFinanceCard
+          amount="R$ 130,00"
+          cardColor="#313862"
+          subtitle="02/08/2022"
+          title="Conta de luz"
+          tagColor="#e44c4e"
+        />
+        <HisrotyFinanceCard
+          amount="R$ 130,00"
+          cardColor="#313862"
+          subtitle="02/08/2022"
+          title="Conta de luz"
+          tagColor="#e44c4e"
+        />
+        <HisrotyFinanceCard
+          amount="R$ 130,00"
+          cardColor="#313862"
+          subtitle="02/08/2022"
+          title="Conta de luz"
+          tagColor="#e44c4e"
+        />
+        <HisrotyFinanceCard
+          amount="R$ 130,00"
+          cardColor="#313862"
+          subtitle="02/08/2022"
+          title="Conta de luz"
+          tagColor="#e44c4e"
+        />
+        <HisrotyFinanceCard
+          amount="R$ 130,00"
+          cardColor="#313862"
+          subtitle="02/08/2022"
+          title="Conta de luz"
+          tagColor="#e44c4e"
+        />
+        <HisrotyFinanceCard
+          amount="R$ 130,00"
+          cardColor="#313862"
+          subtitle="02/08/2022"
+          title="Conta de luz"
+          tagColor="#e44c4e"
+        />
+        <HisrotyFinanceCard
+          amount="R$ 130,00"
+          cardColor="#313862"
+          subtitle="02/08/2022"
+          title="Conta de luz"
+          tagColor="#e44c4e"
+        />
+        <HisrotyFinanceCard
+          amount="R$ 130,00"
+          cardColor="#313862"
+          subtitle="02/08/2022"
+          title="Conta de luz"
+          tagColor="#e44c4e"
+        />
+        <HisrotyFinanceCard
+          amount="R$ 130,00"
+          cardColor="#313862"
+          subtitle="02/08/2022"
+          title="Conta de luz"
+          tagColor="#e44c4e"
+        />
+        <HisrotyFinanceCard
+          amount="R$ 130,00"
+          cardColor="#313862"
+          subtitle="02/08/2022"
+          title="Conta de luz"
+          tagColor="#e44c4e"
+        />
       </Content>
     </Container>
   );
