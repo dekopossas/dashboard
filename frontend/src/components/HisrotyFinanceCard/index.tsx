@@ -3,7 +3,6 @@ import React from 'react'
 import { Container, Tag } from './styles';
 
 interface IHisrotyFinanceCardProps {
-  cardColor: string;
   tagColor: string;
   title: string;
   subtitle: string;
@@ -11,14 +10,13 @@ interface IHisrotyFinanceCardProps {
 }
 
 function HisrotyFinanceCard({
-  cardColor,
   tagColor,
   title,
   subtitle,
   amount,
 }: IHisrotyFinanceCardProps) {
   return (
-    <Container color={cardColor}>
+    <Container>
       <Tag color = {tagColor} />
         <div>
           <span>{title}</span>
