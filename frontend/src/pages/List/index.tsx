@@ -32,6 +32,10 @@ function List() {
         <button type="button" className="tag-filter">
           Recorrentes
         </button>
+        <button type="button" className="tag-filter">
+          Eventuais
+        </button>
+        
       </Filters>
 
       <Content>
