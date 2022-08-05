@@ -15,12 +15,20 @@ export const Filters = styled.div`
     background: none;
     color: ${(props) => props.theme.colors.white};
 
-    margin:0 10px;
+    margin: 0 10px;
 
     transition: opacity 0.3;
 
-    :hover {
+    &:hover {
       opacity: 0.7;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: 55px;
+      margin: 0 auto;
+      border-bottom: 10px solid ${(props) => props.theme.colors.warning};
     }
   }
 `;
