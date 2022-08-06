@@ -3,7 +3,7 @@ import { ThemeProvider } from 'styled-components';
 
 import GlobalStyles from './styles/GlobalStyles';
 import dark from './styles/themes/dark';
-import { Routes } from 'react-router-dom';
+import Routes from './routes';
 
 function App() {
   return (
