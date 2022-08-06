@@ -10,7 +10,7 @@ function Aside() {
     <Container>
       <Header>
         <LogImg src={logoImg} alt="My Wallet Logo" />
-        <Title>Minha Carteira</Title>
+        <Title>My Wallet</Title>
       </Header>
 
       <MenuContainer>
