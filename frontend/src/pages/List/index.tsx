@@ -1,12 +1,27 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
+import { useParams } from 'react-router-dom';
 import ContentHeader from '../../components/ContentHeader';
 import HisrotyFinanceCard from '../../components/HisrotyFinanceCard';
 import SelectInput from '../../components/SelectInput';
 
 import { Container, Content, Filters } from './styles';
 
-function List() {
+interface IRouteParams {
+  match: {
+    params: {
+      type: string;
+    };
+  };
+}
+
+const List = () => {
+  const { type } = useParams<{ type: string }>();
+
+  const title = useMemo(() => {
+    return type === 'entry-balance' ? 'Entradas' : 'Saídas';
+  }, [type]);
+
   const months = [
     { value: 9, label: 'Setembro' },
     { value: 8, label: 'Agosto' },
@@ -23,7 +38,7 @@ function List() {
   ];
   return (
     <Container>
-      <ContentHeader title="Saídas" lineColor="#E44C4E">
+      <ContentHeader title={title} lineColor="#E44C4E">
         <SelectInput options={months} />
         <SelectInput options={years} />
       </ContentHeader>
@@ -35,7 +50,6 @@ function List() {
         <button type="button" className="tag-filter tag-filter-eventual">
           Eventuais
         </button>
-        
       </Filters>
 
       <Content>
@@ -48,6 +62,6 @@ function List() {
       </Content>
     </Container>
   );
-}
+};
 
 export default List;
