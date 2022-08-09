@@ -14,7 +14,7 @@ function Dashboard() {
   return (
     <Container>
       <ContentHeader title="DashBoard" lineColor="#F7931B">
-        <SelectInput options={options} />
+        <SelectInput options={options} onChange={() => {}} />
       </ContentHeader>
     </Container>
   );
