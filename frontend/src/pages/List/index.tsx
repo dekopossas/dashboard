@@ -66,9 +66,8 @@ const List = () => {
         amountFormatted: item.amount,
         frequency: item.frequency,
         dateFormatted: item.date,
-        tagColor: '#4e41f0',
+        tagColor: item.frequency === 'recorrente' ? '#4e41f0' : '#E44c4e',
       };
-
     });
     setData(response);
   }, []);
