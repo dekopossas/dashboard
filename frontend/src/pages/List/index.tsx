@@ -23,7 +23,10 @@ interface IData {
 
 const List = () => {
   const [data, setData] = useState<IData[]>([]);
+  
+  console.log(data)
 
+  const [search, setSearch] = useState('');
   const [monthSelected, setMonthSelected] = useState<string>(String(new Date().getMonth() + 1));
   const [yearSelected, setYearSelected] = useState<string>(String(new Date().getFullYear()));
 
@@ -79,9 +82,19 @@ const List = () => {
     return month === monthSelected && year === yearSelected;
   });
 
+  const filteredInputTextData =
+    search.length > 0 ? filteredData.filter((item) => item.description.includes(search)) : [];
+
   return (
     <Container>
       <ContentHeader title={title} lineColor={lineColor}>
+        <input
+          name="search"
+          type="text"
+          placeholder="Buscar..."
+          onChange={(event) => setSearch(event.target.value)}
+          value={search}
+        />
         <SelectInput
           options={months}
           onChange={(e) => setMonthSelected(e.target.value)}
@@ -103,17 +116,31 @@ const List = () => {
         </button>
       </Filters>
 
-      <Content>
-        {filteredData.map((item) => (
-          <HisrotyFinanceCard
-            key={item.id}
-            amount={item.amountFormatted}
-            subtitle={item.dateFormatted}
-            title={item.description}
-            tagColor={item.tagColor}
-          />
-        ))}
-      </Content>
+      {search.length > 0 ? (
+        <Content>
+          {filteredInputTextData.map((item) => (
+            <HisrotyFinanceCard
+              key={item.id}
+              amount={item.amountFormatted}
+              subtitle={item.dateFormatted}
+              title={item.description}
+              tagColor={item.tagColor}
+            />
+          ))}
+        </Content>
+      ) : (
+        <Content>
+          {filteredData.map((item) => (
+            <HisrotyFinanceCard
+              key={item.id}
+              amount={item.amountFormatted}
+              subtitle={item.dateFormatted}
+              title={item.description}
+              tagColor={item.tagColor}
+            />
+          ))}
+        </Content>
+      )}
     </Container>
   );
 };
