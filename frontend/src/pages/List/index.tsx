@@ -9,7 +9,7 @@ import gains from '../../repositories/gains';
 import formatCurrency from '../../utils/formatCurrency';
 import formatDate from '../../utils/formatDate';
 
-import { Container, Content, Filters } from './styles';
+import { Container, Content, Filters, Input } from './styles';
 
 interface IData {
   id: string;
@@ -90,7 +90,7 @@ const List = () => {
   return (
     <Container>
       <ContentHeader title={title} lineColor={lineColor}>
-        <input
+        <Input
           name="search"
           type="text"
           placeholder="Buscar..."
