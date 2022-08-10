@@ -23,8 +23,6 @@ interface IData {
 
 const List = () => {
   const [data, setData] = useState<IData[]>([]);
-  
-  console.log(data)
 
   const [search, setSearch] = useState('');
   const [monthSelected, setMonthSelected] = useState<string>(String(new Date().getMonth() + 1));
@@ -82,8 +80,12 @@ const List = () => {
     return month === monthSelected && year === yearSelected;
   });
 
+  console.log(filteredData);
+
   const filteredInputTextData =
-    search.length > 0 ? filteredData.filter((item) => item.description.includes(search)) : [];
+    search.length > 0
+      ? filteredData.filter((item) => item.description.includes(search))
+      : filteredData;
 
   return (
     <Container>
@@ -116,31 +118,17 @@ const List = () => {
         </button>
       </Filters>
 
-      {search.length > 0 ? (
-        <Content>
-          {filteredInputTextData.map((item) => (
-            <HisrotyFinanceCard
-              key={item.id}
-              amount={item.amountFormatted}
-              subtitle={item.dateFormatted}
-              title={item.description}
-              tagColor={item.tagColor}
-            />
-          ))}
-        </Content>
-      ) : (
-        <Content>
-          {filteredData.map((item) => (
-            <HisrotyFinanceCard
-              key={item.id}
-              amount={item.amountFormatted}
-              subtitle={item.dateFormatted}
-              title={item.description}
-              tagColor={item.tagColor}
-            />
-          ))}
-        </Content>
-      )}
+      <Content>
+        {filteredInputTextData.map((item) => (
+          <HisrotyFinanceCard
+            key={item.id}
+            amount={item.amountFormatted}
+            subtitle={item.dateFormatted}
+            title={item.description}
+            tagColor={item.tagColor}
+          />
+        ))}
+      </Content>
     </Container>
   );
 };
