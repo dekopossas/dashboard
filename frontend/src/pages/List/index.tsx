@@ -11,14 +11,6 @@ import formatDate from '../../utils/formatDate';
 
 import { Container, Content, Filters } from './styles';
 
-interface IRouteParams {
-  match: {
-    params: {
-      type: string;
-    };
-  };
-}
-
 interface IData {
   id: string;
   description: string;
@@ -26,6 +18,7 @@ interface IData {
   frequency: string;
   dateFormatted: string;
   tagColor: string;
+  date: string;
 }
 
 const List = () => {
@@ -64,15 +57,7 @@ const List = () => {
   ];
 
   useEffect(() => {
-    const filteredDate = listData.filter((item) => {
-      const date = new Date(item.date);
-      const month = String(date.getDate() + 1);
-      const year = String(date.getFullYear());
-
-      return month === monthSelected && year === yearSelected;
-    });
-
-    const formattedDate = filteredDate.map((item) => {
+    const response = listData.map((item) => {
       return {
         id: String(Math.random() * data.length),
         description: item.description,
@@ -80,11 +65,19 @@ const List = () => {
         frequency: item.frequency,
         dateFormatted: formatDate(item.date),
         tagColor: item.frequency === 'recorrente' ? '#4e41f0' : '#E44c4e',
+        date: item.date,
       };
     });
-    
-    setData(formattedDate);
-  }, []);
+    setData(response);
+  }, [data.length, listData]);
+
+  const filteredData = data.filter((item) => {
+    const date = new Date(item.date);
+    const month = String(date.getMonth() + 1);
+    const year = String(date.getFullYear());
+
+    return month === monthSelected && year === yearSelected;
+  });
 
   return (
     <Container>
@@ -111,7 +104,7 @@ const List = () => {
       </Filters>
 
       <Content>
-        {data.map((item) => (
+        {filteredData.map((item) => (
           <HisrotyFinanceCard
             key={item.id}
             amount={item.amountFormatted}

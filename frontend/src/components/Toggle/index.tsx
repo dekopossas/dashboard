@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container, ToggleLabel, ToggleSelector } from './styles';
 
 function Toggle() {
-  const [online, setOnline] = useState(false)
+  const [online, setOnline] = useState(false);
 
   return (
     <Container>
