@@ -6,6 +6,9 @@ import SelectInput from '../../components/SelectInput';
 import expenses from '../../repositories/expenses';
 import gains from '../../repositories/gains';
 
+// Utils
+import listOfMonths from '../../utils/months';
+
 import { Container } from './styles';
 
 function Dashboard() {
@@ -29,34 +32,34 @@ function Dashboard() {
     }
   };
 
-  // const years = useMemo(() => {
-  //   let uniqueYears: number[] = [];
+  const years = useMemo(() => {
+    let uniqueYears: number[] = [];
 
-  //   listData.forEach((item) => {
-  //     const date = new Date(item.date);
-  //     const year = date.getFullYear();
+    [...expenses, ...gains].forEach((item) => {
+      const date = new Date(item.date);
+      const year = date.getFullYear();
 
-  //     if (!uniqueYears.includes(year)) {
-  //       uniqueYears.push(year);
-  //     }
-  //   });
+      if (!uniqueYears.includes(year)) {
+        uniqueYears.push(year);
+      }
+    });
 
-  //   return uniqueYears.map((year) => {
-  //     return {
-  //       value: year,
-  //       label: year,
-  //     };
-  //   });
-  // }, [listData]);
+    return uniqueYears.map((year) => {
+      return {
+        value: year,
+        label: year,
+      };
+    });
+  }, []);
 
-  // const months = useMemo(() => {
-  //   return listOfMonths.map((month, index) => {
-  //     return {
-  //       value: index + 1,
-  //       label: month,
-  //     };
-  //   });
-  // }, []);
+  const months = useMemo(() => {
+    return listOfMonths.map((month, index) => {
+      return {
+        value: index + 1,
+        label: month,
+      };
+    });
+  }, []);
 
   return (
     <Container>
