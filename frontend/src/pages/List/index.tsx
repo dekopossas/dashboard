@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 import { useParams } from 'react-router-dom';
 import ContentHeader from '../../components/ContentHeader';
@@ -8,6 +9,7 @@ import expenses from '../../repositories/expenses';
 import gains from '../../repositories/gains';
 import formatCurrency from '../../utils/formatCurrency';
 import formatDate from '../../utils/formatDate';
+import listOfMonths from '../../utils/months';
 
 import { Container, Content, Filters, Input } from './styles';
 
@@ -42,13 +44,6 @@ const List = () => {
     return type === 'entry-balance' ? gains : expenses;
   }, [type]);
 
-  const months = [
-    { value: 9, label: 'Setembro' },
-    { value: 8, label: 'Agosto' },
-    { value: 7, label: 'Julho' },
-    { value: 6, label: 'Junho' },
-  ];
-
   const years = useMemo(() => {
     let uniqueYears: number[] = [];
 
@@ -69,10 +64,19 @@ const List = () => {
     });
   }, [listData]);
 
+  const months = useMemo(() => {
+    return listOfMonths.map((month, index) => {
+      return {
+        value: index + 1,
+        label: month,
+      };
+    });
+  }, []);
+
   useEffect(() => {
     const response = listData.map((item) => {
       return {
-        id: String(Math.random() * data.length),
+        id: uuidv4(),
         description: item.description,
         amountFormatted: formatCurrency(Number(item.amount)),
         frequency: item.frequency,
