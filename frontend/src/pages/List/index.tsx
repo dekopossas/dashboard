@@ -5,11 +5,15 @@ import { useParams } from 'react-router-dom';
 import ContentHeader from '../../components/ContentHeader';
 import HisrotyFinanceCard from '../../components/HisrotyFinanceCard';
 import SelectInput from '../../components/SelectInput';
-import expenses from '../../repositories/expenses';
-import gains from '../../repositories/gains';
+
+// Utils
 import formatCurrency from '../../utils/formatCurrency';
 import formatDate from '../../utils/formatDate';
 import listOfMonths from '../../utils/months';
+
+// Mock
+import expenses from '../../repositories/expenses';
+import gains from '../../repositories/gains';
 
 import { Container, Content, Filters, Input } from './styles';
 
