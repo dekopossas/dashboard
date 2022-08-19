@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div``;
 
-export const Content = styled.div``;
+export const Content = styled.main``;
 
 export const Input = styled.input`
   padding: 7px 10px;
