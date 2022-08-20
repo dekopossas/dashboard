@@ -1,10 +1,21 @@
-import React from 'react'
-import { Container } from './styles'
+import React from 'react';
 
-function WalletBox() {
-  return (
-    <Container>WalletBox</Container>
-  )
+// Assets
+import dollarImg from '../../assets/dollar.svg';
+import arrowUpImg from '../../assets/arrow-up.svg';
+import arrowDownImg from '../../assets/arrow-down.svg';
+
+import { Container } from './styles';
+
+interface IWalletBoxProps {
+  title: string;
+  amont: number;
+  footerlabe: string;
+  icon: 'dolar' | 'arrow-down' | 'arrow-up';
 }
 
-export default WalletBox
+function WalletBox() {
+  return <Container>WalletBox</Container>;
+}
+
+export default WalletBox;
