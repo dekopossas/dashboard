@@ -88,7 +88,20 @@ function Dashboard() {
           footerlabe="Atualizado com base nas estradas e saídas"
           icon="dolar"
         />
-
+        <WalletBox 
+          title="Entradas"
+          color='#f7931b'
+          amount={5000.00}
+          footerlabe="Atualizado com base nas estradas e saídas"
+          icon="arrow-up"
+        />
+                <WalletBox 
+          title="Saída"
+          color='#E44c4e'
+          amount={4850.00}
+          footerlabe="Atualizado com base nas estradas e saídas"
+          icon="arrow-down"
+        />
       </Content>
     </Container>
   );
