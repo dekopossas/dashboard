@@ -1,3 +1,9 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export const Container = styled.div``;
+interface IcontainerProps {
+  color: string;
+}
+
+export const Container = styled.div`
+  background-color: ${(props) => props.color};
+`;
