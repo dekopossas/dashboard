@@ -1,6 +1,9 @@
 import React, { useMemo, useState } from 'react';
+
+// Components
 import ContentHeader from '../../components/ContentHeader';
 import SelectInput from '../../components/SelectInput';
+import WalletBox from '../../components/WalletBox'
 
 // Mock
 import expenses from '../../repositories/expenses';
@@ -9,7 +12,8 @@ import gains from '../../repositories/gains';
 // Utils
 import listOfMonths from '../../utils/months';
 
-import { Container } from './styles';
+// style
+import { Container, Content } from './styles';
 
 function Dashboard() {
   const [monthSelected, setMonthSelected] = useState<number>(new Date().getMonth() + 1);
@@ -75,6 +79,17 @@ function Dashboard() {
           defaultValue={yearSelected}
         />
       </ContentHeader>
+
+      <Content>
+        <WalletBox 
+          title="Saldo"
+          color='#4e41f0'
+          amount={150.00}
+          footerlabe="Atualizado com base nas estradas e saídas"
+          icon="dolar"
+        />
+
+      </Content>
     </Container>
   );
 }
