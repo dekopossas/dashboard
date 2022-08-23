@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import CountUp from 'react-countup';
 
 // Assets
 import dolarImg from '../../assets/dolar.svg';
@@ -32,7 +33,9 @@ function WalletBox({ title, amount, footerlabe, icon, color }: IWalletBoxProps) 
   return (
     <Container color={color}>
       <span>{title}</span>
-      <h1>{amount}</h1>
+      <h1>
+        <CountUp end={amount} prefix={'R$'} separator="." decimal="," decimals={2} />
+      </h1>
       <small>{footerlabe}</small>
       <img src={iconSelected} alt={title} />
     </Container>
