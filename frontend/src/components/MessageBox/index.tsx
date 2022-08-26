@@ -8,9 +8,15 @@ function MessageBox() {
   return (
     <Container>
       <header>
-        <h1>Muito Bem!</h1>
-        <img src={happyImg} alt="" />
+        <h1>
+          Muito Bem!
+          <img src={happyImg} alt="" />
+        </h1>
+        <p>Sua carteira está positiva!</p>
       </header>
+      <footer>
+        <span>Continue assim, considere investir esse valor!</span>
+      </footer>
     </Container>
   );
 }
