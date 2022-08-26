@@ -34,7 +34,7 @@ function WalletBox({ title, amount, footerlabe, icon, color }: IWalletBoxProps) 
     <Container color={color}>
       <span>{title}</span>
       <h1>
-        <CountUp end={amount} prefix={'R$'} separator="." decimal="," decimals={2} />
+        <CountUp end={amount} prefix={'R$'} separator="." decimal="," decimals={2} duration={1} />
       </h1>
       <small>{footerlabe}</small>
       <img src={iconSelected} alt={title} />
