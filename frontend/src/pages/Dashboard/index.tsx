@@ -4,6 +4,7 @@ import React, { useMemo, useState } from 'react';
 import ContentHeader from '../../components/ContentHeader';
 import SelectInput from '../../components/SelectInput';
 import WalletBox from '../../components/WalletBox'
+import MessageBox from '../../components/MessageBox'
 
 // Mock
 import expenses from '../../repositories/expenses';
@@ -102,6 +103,7 @@ function Dashboard() {
           footerlabe="Atualizado com base nas estradas e saídas"
           icon="arrow-down"
         />
+        <MessageBox />
       </Content>
     </Container>
   );
