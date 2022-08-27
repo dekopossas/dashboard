@@ -4,12 +4,17 @@ import happyImg from '../../assets/happy.svg';
 
 import { Container } from './styles';
 
+interface IMessageBoxProps {
+  title:
+}
+
 function MessageBox() {
   return (
     <Container>
       <header>
         <h1>
-          Muito Bem!
+          Muito Bem!\
+          quase
           <img src={happyImg} alt="" />
         </h1>
         <p>Sua carteira está positiva!</p>
