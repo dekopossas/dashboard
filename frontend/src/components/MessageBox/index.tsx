@@ -13,8 +13,7 @@ function MessageBox() {
     <Container>
       <header>
         <h1>
-          Muito Bem!\
-          quase
+          Muito Bem!
           <img src={happyImg} alt="" />
         </h1>
         <p>Sua carteira está positiva!</p>
