@@ -3,8 +3,8 @@ import React, { useMemo, useState } from 'react';
 // Components
 import ContentHeader from '../../components/ContentHeader';
 import SelectInput from '../../components/SelectInput';
-import WalletBox from '../../components/WalletBox'
-import MessageBox from '../../components/MessageBox'
+import WalletBox from '../../components/WalletBox';
+import MessageBox from '../../components/MessageBox';
 
 // Mock
 import expenses from '../../repositories/expenses';
@@ -12,6 +12,9 @@ import gains from '../../repositories/gains';
 
 // Utils
 import listOfMonths from '../../utils/months';
+
+// Assets
+import happyImg from '../../assets/happy.svg';
 
 // style
 import { Container, Content } from './styles';
@@ -82,28 +85,33 @@ function Dashboard() {
       </ContentHeader>
 
       <Content>
-        <WalletBox 
+        <WalletBox
           title="Saldo"
-          color='#4e41f0'
-          amount={150.00}
+          color="#4e41f0"
+          amount={150.0}
           footerlabe="Atualizado com base nas estradas e saídas"
           icon="dolar"
         />
-        <WalletBox 
+        <WalletBox
           title="Entradas"
-          color='#f7931b'
-          amount={5000.00}
+          color="#f7931b"
+          amount={5000.0}
           footerlabe="Atualizado com base nas estradas e saídas"
           icon="arrow-up"
         />
-                <WalletBox 
+        <WalletBox
           title="Saída"
-          color='#E44c4e'
-          amount={4850.00}
+          color="#E44c4e"
+          amount={4850.0}
           footerlabe="Atualizado com base nas estradas e saídas"
           icon="arrow-down"
         />
-        <MessageBox />
+        <MessageBox
+          title="Muito bem!"
+          description="Sua carteira está positiva!"
+          footerText="Continue assim. Considere investir o seu saldo."
+          icon={happyImg}
+        />
       </Content>
     </Container>
   );
