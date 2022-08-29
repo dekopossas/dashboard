@@ -14,6 +14,7 @@ import gains from '../../repositories/gains';
 import listOfMonths from '../../utils/months';
 
 // Assets
+import sadImg from '../../assets/sad.svg';
 import happyImg from '../../assets/happy.svg';
 
 // style
@@ -69,6 +70,26 @@ function Dashboard() {
     });
   }, []);
 
+  const totalExpenses = useMemo(() => {
+    let total: number = 0;
+
+    expenses.forEach((item) => {
+      const date = new Date(item.date);
+      const year = date.getFullYear();
+      const month = date.getMonth() + 1;
+
+      if (month === monthSelected && year === yearSelected) {
+        try {
+          total += Number(item.amount);
+        } catch {
+          throw new Error('Invalid amonut! Amount must be number.');
+        }
+      }
+    });
+    
+    return total;
+  }, [monthSelected, yearSelected]);
+
   return (
     <Container>
       <ContentHeader title="DashBoard" lineColor="#F7931B">
@@ -102,7 +123,7 @@ function Dashboard() {
         <WalletBox
           title="Saída"
           color="#E44c4e"
-          amount={4850.0}
+          amount={totalExpenses}
           footerlabe="Atualizado com base nas estradas e saídas"
           icon="arrow-down"
         />
