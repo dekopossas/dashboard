@@ -90,6 +90,26 @@ function Dashboard() {
     return total;
   }, [monthSelected, yearSelected]);
 
+  const totalGains = useMemo(() => {
+    let total: number = 0;
+
+    gains.forEach((item) => {
+      const date = new Date(item.date);
+      const year = date.getFullYear();
+      const month = date.getMonth() + 1;
+
+      if (month === monthSelected && year === yearSelected) {
+        try {
+          total += Number(item.amount);
+        } catch {
+          throw new Error('Invalid amonut! Amount must be number.');
+        }
+      }
+    });
+    
+    return total;
+  }, [monthSelected, yearSelected]);
+
   return (
     <Container>
       <ContentHeader title="DashBoard" lineColor="#F7931B">
@@ -116,7 +136,7 @@ function Dashboard() {
         <WalletBox
           title="Entradas"
           color="#f7931b"
-          amount={5000.0}
+          amount={totalGains}
           footerlabe="Atualizado com base nas estradas e saídas"
           icon="arrow-up"
         />
