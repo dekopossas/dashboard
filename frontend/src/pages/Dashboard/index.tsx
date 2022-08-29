@@ -86,7 +86,7 @@ function Dashboard() {
         }
       }
     });
-    
+
     return total;
   }, [monthSelected, yearSelected]);
 
@@ -106,9 +106,13 @@ function Dashboard() {
         }
       }
     });
-    
+
     return total;
   }, [monthSelected, yearSelected]);
+
+  const totalBalance = useMemo(() => {
+    return totalGains - totalExpenses;
+  }, [totalExpenses, totalGains]);
 
   return (
     <Container>
@@ -129,7 +133,7 @@ function Dashboard() {
         <WalletBox
           title="Saldo"
           color="#4e41f0"
-          amount={150.0}
+          amount={totalBalance}
           footerlabe="Atualizado com base nas estradas e saídas"
           icon="dolar"
         />
