@@ -114,6 +114,31 @@ function Dashboard() {
     return totalGains - totalExpenses;
   }, [totalExpenses, totalGains]);
 
+  const message = useMemo(() => {
+    if (totalBalance < 0) {
+      return {
+        title: 'Que triste!',
+        description: 'Neste mês você gastou mais do que deveria.',
+        footerText: 'Verifique seus gastos e tente cortar algumas coisas desnecessárias.',
+        icon: sadImg,
+      };
+    } else if (totalBalance === 0) {
+      return {
+        title: 'Que triste!',
+        description: 'Neste mês você gastou exatamente o que ganhou.',
+        footerText: 'Tenha cuidado. No próximo teste poupar o seu dinheiro',
+        icon: sadImg,
+      };
+    } else {
+      return {
+        title: 'Muito bem!',
+        description: 'Sua carteira está positiva!',
+        footerText: 'Continue assim. Considere investir o seu saldo.',
+        icon: happyImg,
+      };
+    }
+  }, []);
+
   return (
     <Container>
       <ContentHeader title="DashBoard" lineColor="#F7931B">
@@ -152,10 +177,10 @@ function Dashboard() {
           icon="arrow-down"
         />
         <MessageBox
-          title="Muito bem!"
-          description="Sua carteira está positiva!"
-          footerText="Continue assim. Considere investir o seu saldo."
-          icon={happyImg}
+          title={message.title}
+          description={message.description}
+          footerText={message.footerText}
+          icon={message.icon}
         />
       </Content>
     </Container>
