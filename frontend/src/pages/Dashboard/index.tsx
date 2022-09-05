@@ -137,7 +137,7 @@ function Dashboard() {
         icon: happyImg,
       };
     }
-  }, []);
+  }, [totalBalance]);
 
   return (
     <Container>
