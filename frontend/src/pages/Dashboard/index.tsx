@@ -16,6 +16,7 @@ import listOfMonths from '../../utils/months';
 // Assets
 import sadImg from '../../assets/sad.svg';
 import happyImg from '../../assets/happy.svg';
+import grinning from '../../assets/grinning.svg';
 
 // style
 import { Container, Content } from './styles';
@@ -124,10 +125,10 @@ function Dashboard() {
       };
     } else if (totalBalance === 0) {
       return {
-        title: 'Que triste!',
+        title: 'Ufaaa!',
         description: 'Neste mês você gastou exatamente o que ganhou.',
         footerText: 'Tenha cuidado. No próximo teste poupar o seu dinheiro',
-        icon: sadImg,
+        icon: grinning,
       };
     } else {
       return {
