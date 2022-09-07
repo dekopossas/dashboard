@@ -5,6 +5,7 @@ import ContentHeader from '../../components/ContentHeader';
 import SelectInput from '../../components/SelectInput';
 import WalletBox from '../../components/WalletBox';
 import MessageBox from '../../components/MessageBox';
+import PieChartComponent from '../../components/PieChartComponent';
 
 // Mock
 import expenses from '../../repositories/expenses';
@@ -183,6 +184,7 @@ function Dashboard() {
           footerText={message.footerText}
           icon={message.icon}
         />
+        <PieChartComponent />
       </Content>
     </Container>
   );
