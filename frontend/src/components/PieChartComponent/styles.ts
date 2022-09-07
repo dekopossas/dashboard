@@ -28,11 +28,48 @@ export const SideLeft = styled.aside`
 
 export const LegendContainer = styled.ul`
   list-style: none;
+
+  max-height: 175px;
+  padding-right: 15px;
+
+  overflow-y: scroll;
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: ${(props) => props.theme.colors.secundary};
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: ${(props) => props.theme.colors.tertiary};
+    border-radius: 10px;
+  }
 `;
 
 export const Legend = styled.li<ILegendProps>`
+  display: fles;
+  align-items: center;
+
+  margin-bottom: 7px;
+
   > div {
     background-color: ${(props) => props.color};
+
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+
+    font-size: 18px;
+
+    line-height: 40px;
+    text-align: center;
+  }
+
+  > span {
+    margin-left: 5px;
   }
 `;
 
