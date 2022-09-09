@@ -118,7 +118,22 @@ function Dashboard() {
     const percentGains = (totalGains / total) * 100;
     const percentExpenses = (totalExpenses / total) * 100;
 
-    const data = {};
+    const data = [
+      {
+        name: 'Entradas',
+        value: 'totalExpenses',
+        percent: percentGains.toFixed(1),
+        color: '#E44C4E',
+      },
+      {
+        name: 'Saídas',
+        value: 'totalExpenses',
+        percent: percentExpenses.toFixed(1),
+        color: '#F7931B',
+      },
+    ];
+
+    return data;
   }, [totalExpenses, totalGains]);
 
   const totalBalance = useMemo(() => {
