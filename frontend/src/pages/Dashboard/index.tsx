@@ -21,6 +21,7 @@ import grinning from '../../assets/grinning.svg';
 
 // style
 import { Container, Content } from './styles';
+import { info } from 'console';
 
 function Dashboard() {
   const [monthSelected, setMonthSelected] = useState<number>(new Date().getMonth() + 1);
@@ -113,10 +114,18 @@ function Dashboard() {
   }, [monthSelected, yearSelected]);
 
   const relationExpensesVersusGains = useMemo(() => {
-    const total = totalGains + totalExpenses;
+    let total: number = 0;
+      
+    let percentGains: number = 0;
+    let percentExpenses: number = 0;
 
-    const percentGains = (totalGains / total) * 100;
-    const percentExpenses = (totalExpenses / total) * 100;
+    if(totalGains > 0 || totalExpenses > 0) {
+      
+      total = totalGains + totalExpenses;
+      
+      percentGains = (totalGains / total) * 100;
+      percentExpenses = (totalExpenses / total) * 100;
+    }
 
     const data = [
       {
