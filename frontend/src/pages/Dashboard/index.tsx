@@ -208,7 +208,7 @@ function Dashboard() {
           footerText={message.footerText}
           icon={message.icon}
         />
-        <PieChartComponent />
+        <PieChartComponent data={relationExpensesVersusGains}/>
       </Content>
     </Container>
   );
