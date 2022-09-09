@@ -112,6 +112,15 @@ function Dashboard() {
     return total;
   }, [monthSelected, yearSelected]);
 
+  const relationExpensesVersusGains = useMemo(() => {
+    const total = totalGains + totalExpenses;
+
+    const percentGains = (totalGains / total) * 100;
+    const percentExpenses = (totalExpenses / total) * 100;
+
+    const data = {};
+  }, [totalExpenses, totalGains]);
+
   const totalBalance = useMemo(() => {
     return totalGains - totalExpenses;
   }, [totalExpenses, totalGains]);
