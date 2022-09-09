@@ -103,7 +103,7 @@ function Dashboard() {
       if (month === monthSelected && year === yearSelected) {
         try {
           total += Number(item.amount);
-        } catch {
+        } catch (err) {
           throw new Error('Invalid amonut! Amount must be number.');
         }
       }
@@ -121,14 +121,14 @@ function Dashboard() {
     const data = [
       {
         name: 'Entradas',
-        value: 'totalExpenses',
-        percent: percentGains.toFixed(1),
+        value: totalExpenses,
+        percent: Number(percentGains.toFixed(1)),
         color: '#E44C4E',
       },
       {
         name: 'Saídas',
-        value: 'totalExpenses',
-        percent: percentExpenses.toFixed(1),
+        value: totalGains,
+        percent: Number(percentExpenses.toFixed(1)),
         color: '#F7931B',
       },
     ];
@@ -208,7 +208,7 @@ function Dashboard() {
           footerText={message.footerText}
           icon={message.icon}
         />
-        <PieChartComponent data={relationExpensesVersusGains}/>
+        <PieChartComponent data={relationExpensesVersusGains} />
       </Content>
     </Container>
   );

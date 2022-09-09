@@ -3,15 +3,26 @@ import React from 'react';
 
 import { Container, SideLeft, LegendContainer, Legend, SideRight } from './styles';
 
-const PieChartComponent: React.FC = () => (
+interface IPieChartComponentProps {
+  data: {
+    name: string;
+    value: number;
+    percent: number;
+    color: string;
+  }[];
+}
+
+const PieChartComponent: React.FC<IPieChartComponentProps> = ({ data }) => (
   <Container>
     <SideLeft>
       <h2>Relação</h2>
       <LegendContainer>
-        <Legend color="#F7931b" >
-          <div>5%</div>
-          <span>Entradas</span>
-        </Legend>
+        {data.map((indicator) => (
+          <Legend key={indicator.name} color={indicator.color}>
+            <div>{indicator.percent}</div>
+            <span>{indicator.name}</span>
+          </Legend>
+        ))}
       </LegendContainer>
     </SideLeft>
     <SideRight>
