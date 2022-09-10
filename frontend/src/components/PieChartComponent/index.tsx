@@ -1,5 +1,5 @@
 import React from 'react';
-// import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
+import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 
 import { Container, SideLeft, LegendContainer, Legend, SideRight } from './styles';
 
@@ -26,7 +26,7 @@ const PieChartComponent: React.FC<IPieChartComponentProps> = ({ data }) => (
       </LegendContainer>
     </SideLeft>
     <SideRight>
-      {/* <ResponsiveContainer>
+      <ResponsiveContainer>
         <PieChart>
           <Pie 
             data={[{amount:30, percent:95}]}
@@ -36,7 +36,7 @@ const PieChartComponent: React.FC<IPieChartComponentProps> = ({ data }) => (
             {}
           </Pie>
         </PieChart>
-      </ResponsiveContainer> */}
+      </ResponsiveContainer>
     </SideRight>
   </Container>
 );
