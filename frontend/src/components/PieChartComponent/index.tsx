@@ -31,6 +31,7 @@ const PieChartComponent: React.FC<IPieChartComponentProps> = ({ data }) => (
           <Pie 
             data={data}
             labelLine={false}
+            
             dataKey="percent"
           >
             {
