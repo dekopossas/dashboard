@@ -28,17 +28,10 @@ const PieChartComponent: React.FC<IPieChartComponentProps> = ({ data }) => (
     <SideRight>
       <ResponsiveContainer>
         <PieChart>
-          <Pie 
-            data={data}
-            labelLine={false}
-            
-            dataKey="percent"
-          >
-            {
-              data.map((indicator) => (
-                <Cell key={indicator.name} fill={indicator.color} />
-              ))
-            }
+          <Pie data={data} labelLine={false} dataKey="percent">
+            {data.map((indicator) => (
+              <Cell key={indicator.name} fill={indicator.color} />
+            ))}
           </Pie>
         </PieChart>
       </ResponsiveContainer>
